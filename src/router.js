@@ -14,6 +14,16 @@ export default new Router({
       component: Home
     },
     {
+      path: '/orgs',
+      name: 'orgs',
+      component: () => import(/* webpackChunkName: "orgs" */ './views/Orgs.vue')
+    },
+    {
+      path: '/about',
+      name: 'projects',
+      component: () => import(/* webpackChunkName: "projects" */ './views/Projects.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
