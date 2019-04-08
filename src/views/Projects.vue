@@ -7,11 +7,38 @@
 
 <script>
     import ProjectInfo from '@/components/ProjectInfo.vue'
-    
+    import axios from 'axios'
+
     export default {
-        name: Project,
+        name: 'projects',
         components: {
             ProjectInfo
+        },
+
+        data() {
+            return {
+                projects: [],
+                error: false
+            }
+        },
+
+        created() {
+            this.fetchProjects()
+        },
+
+        watch: {
+            // call again the method if the route changes
+            '$route': 'fetchProjects'
+        },
+
+        methods: {
+            fetchProjects () {
+                axios.get('http://127.0.0.1:8000/projects/').then(response => {
+                    console.log(response)
+                }).catch(error => {
+                    console.log(error)
+                })
+            }
         }
     }
 </script>
