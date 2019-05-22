@@ -33,8 +33,8 @@
 
         methods: {
             fetchProjects () {
-                axios.get('http://127.0.0.1:8000/projects/').then(response => {
-                    console.log(response)
+                axios.get('http://127.0.0.1:8000/api/projects/').then(response => {
+                    this.data.projects = response.data;
                 }).catch(error => {
                     console.log(error)
                 })

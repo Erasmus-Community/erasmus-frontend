@@ -1,6 +1,5 @@
 <template>
     <div>
-        Info Project
     </div>
 </template>
 
