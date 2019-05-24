@@ -1,18 +1,18 @@
 <template>
     <div>
         <h1> Organizations </h1>
-        
+        <OrgInfo v-for="org in orgs" :key="org.key" :org="org"></OrgInfo>
     </div>
 </template>
 
 <script>
-    import { OrgsInfo } from "@/components/OrgsInfo";
+    import { OrgInfo } from "@/components/OrgInfo.vue";
     import axios from 'axios';
 
     export default {
         name: 'orgs',
         components: {
-            OrgsInfo
+            OrgInfo
         },
 
         data() {
