@@ -13,6 +13,10 @@ export default new Router({
       name: 'home',
       component: Home
     },
+    { path: '/orgs/:id',
+      name: 'orgInfo',
+      component: () => import(/* webpackChunkName: "orgInfo" */ './components/OrgInfo.vue')
+    },
     {
       path: '/orgs',
       name: 'orgs',
