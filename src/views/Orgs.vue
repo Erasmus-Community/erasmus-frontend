@@ -11,9 +11,6 @@
 
     export default {
         name: 'orgs',
-        components: {
-            OrgInfo
-        },
 
         data() {
             return {

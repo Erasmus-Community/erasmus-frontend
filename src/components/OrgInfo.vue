@@ -27,7 +27,8 @@
 
         methods:{
             fetchOrgInfo(){
-                let url  = `http://127.0.0.1:8000/api/orgs/${this.id}`;
+                let id = this.$route.params.id;
+                let url  = `http://127.0.0.1:8000/api/orgs/${id}`;
                 axios.get(url).then( response => {
                     this.org = response.data;
                 }).catch( error => {
