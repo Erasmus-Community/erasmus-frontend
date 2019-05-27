@@ -18,9 +18,24 @@ export default new Router({
       component: () => import(/* webpackChunkName: "orgInfo" */ './components/OrgInfo.vue')
     },
     {
+      path: '/orgs/create',
+      name: 'createOrg'
+      // component
+    },
+    {
       path: '/orgs',
       name: 'orgs',
       component: () => import(/* webpackChunkName: "orgs" */ './views/Orgs.vue')
+    },
+    {
+      path: '/projects/:id',
+      name: 'projectInfo',
+      component: () => import(/* webpackChunkName: "projectInfo" */ './components/ProjectInfo.vue')
+    },
+    {
+      path: '/projects/create',
+      name: 'createProj'
+      // component
     },
     {
       path: '/projects',

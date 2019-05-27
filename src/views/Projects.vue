@@ -1,20 +1,15 @@
 <template>
 	<div>
-		<h1>All Projects</h1>
-		<ProjectInfo v-for="proj in projects" :key="proj.key" :proj="proj"></ProjectInfo>
+		<h1>Available Projects</h1>
 	</div>
 </template>
 
 <script>
-	import ProjectInfo from '@/components/ProjectInfo.vue'
 	import axios from 'axios'
 
 	export default {
 		name: 'projects',
-		components: {
-			ProjectInfo
-		},
-
+		
 		data() {
 			return {
 				projects: [],
@@ -24,11 +19,6 @@
 
 		created() {
 			this.fetchProjects()
-		},
-
-		watch: {
-			// call again the method if the route changes
-			'$route': 'fetchProjects'
 		},
 
 		methods: {

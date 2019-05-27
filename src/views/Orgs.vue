@@ -1,12 +1,12 @@
 <template>
     <div>
         <h1> Organizations </h1>
-        <!-- <OrgInfo v-for="org in orgs" :key="org.key" :org="org"></OrgInfo> -->
+        <div class="container">    
+        </div>
     </div>
 </template>
 
 <script>
-    //import OrgInfo from "@/components/OrgInfo.vue";
     import axios from 'axios';
 
     export default {
