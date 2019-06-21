@@ -2,32 +2,25 @@
     <v-content>
         <h1> Organizations </h1>
         <!-- ADD FILTER HERE FOR THE TABLE LATER -->
-        <table>
-            <thead>
-                <tr>
-                    <td>Organization Name</td>
-                    <td>Country</td>
-                    <td>Interests</td>
-                    <td>More Info</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="org in orgs" v-bind:key = org.id>
-                    <td>{{org.name}}</td>
-                    <td>{{org.country}}</td>
-                    <td>{{org.interests}}</td>
-                    <td>
-                        <button></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div>
-            <v-btn color="success">Success</v-btn>
-            <v-btn color="error">Error</v-btn>
-            <v-btn color="warning">Warning</v-btn>
-            <v-btn color="info">Info</v-btn>
-        </div>
+        <v-data-table
+            :headers="headers"
+            :items="orgs"
+            class="elevation-1"
+        >
+            <template v-slot:items="props">
+                <td>{{props.item.name}}</td>
+                <td>{{props.item.country}}</td>
+                <td>{{props.item.interests}}</td>
+                <td>
+                    <router-link :to="{name: 'orgInfo', params: { id: props.item.id}}">
+                        <button>
+                                More Info
+                        </button>
+                    </router-link>
+                  </td>
+            </template>
+
+        </v-data-table>
     </v-content>
 </template>
 
@@ -40,7 +33,13 @@
         data() {
             return {
                 orgs: [],
-                error: false                
+                headers: [
+                    { text: 'Organization Name', value: 'name' },
+                    { text: 'Country', value: 'country' },
+                    { text: 'Interests', value: 'interests' },
+                    { text: 'More Info', value: ''}
+                ],
+                error: false             
             }
         },
         

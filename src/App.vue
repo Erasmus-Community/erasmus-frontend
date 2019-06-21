@@ -8,7 +8,7 @@
 <script>
 import MainNavigation from '@/components/Navbar';
 export default {
-    name: 'LogRocketApp',
+    name: 'youthEramus',
     components: {
         MainNavigation
     }

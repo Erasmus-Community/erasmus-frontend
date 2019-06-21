@@ -15,13 +15,19 @@
         <v-toolbar app dark>
             <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-spacer class="hidden-md-and-up"></v-spacer>
-            <v-btn flat class="hidden-sm-and-down">Pricing</v-btn>
+            <router-link :to="{path: '/'}">
+                <v-btn flat class="hidden-sm-and-down">Home</v-btn>
+            </router-link>
             <v-spacer class="hidden-sm-and-down"></v-spacer>
-            <v-btn flat class="hidden-sm-and-down">Customers</v-btn>
-            <v-btn flat class="hidden-sm-and-down">Docs</v-btn>
-            <v-btn flat class="hidden-sm-and-down">Blog</v-btn>
-            <v-btn flat class="hidden-sm-and-down">Login</v-btn>
-            <v-btn color="purple darken-3" class="hidden-sm-and-down">Sign Up</v-btn>
+            <router-link :to="{path: '/orgs'}">
+                <v-btn flat class="hidden-sm-and-down">Organisations</v-btn>
+            </router-link>
+            <router-link :to="{path: '/projects'}">
+                <v-btn flat class="hidden-sm-and-down">Projects</v-btn>
+            </router-link>
+            <router-link :to="{path: '/'}">
+                <v-btn flat class="hidden-sm-and-down">The Team</v-btn>
+            </router-link>
         </v-toolbar>
     </span>
 </template>
@@ -33,12 +39,10 @@
             return {
                 drawer: false,
                 menus: [
-                    { value: 'Pricing' },
-                    { value: 'Customers' },
-                    { value: 'Docs' },
-                    { value: 'Blog' },
-                    { value: 'Login' },
-                    { value: 'Sign Up' }
+                    { value: 'Home' },
+                    { value: 'Organisations' },
+                    { value: 'Projects' },
+                    { value: 'The Team' }
                 ]
             };
         }
