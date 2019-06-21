@@ -1,9 +1,34 @@
 <template>
-    <div>
+    <v-content>
         <h1> Organizations </h1>
-        <div class="container">    
+        <!-- ADD FILTER HERE FOR THE TABLE LATER -->
+        <table>
+            <thead>
+                <tr>
+                    <td>Organization Name</td>
+                    <td>Country</td>
+                    <td>Interests</td>
+                    <td>More Info</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="org in orgs" v-bind:key = org.id>
+                    <td>{{org.name}}</td>
+                    <td>{{org.country}}</td>
+                    <td>{{org.interests}}</td>
+                    <td>
+                        <button></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <v-btn color="success">Success</v-btn>
+            <v-btn color="error">Error</v-btn>
+            <v-btn color="warning">Warning</v-btn>
+            <v-btn color="info">Info</v-btn>
         </div>
-    </div>
+    </v-content>
 </template>
 
 <script>
