@@ -1,6 +1,6 @@
 <template>
     <v-content>
-        <h1> Organizations </h1>
+        <h1 class="text-xs-center"> Organizations </h1>
         <!-- ADD FILTER HERE FOR THE TABLE LATER -->
         <v-data-table
             :headers="headers"

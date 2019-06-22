@@ -1,7 +1,24 @@
 <template>
-	<div>
-		<h1>Available Projects</h1>
-	</div>
+	<v-content>
+		<h1 class="text-xs-center">Available Projects</h1>
+		<!-- ADD FILTER HERE FOR THE TABLE LATER -->
+        <v-data-table
+            :headers="headers"
+            :items="projects"
+            class="elevation-1"
+        >
+            <template v-slot:items="props">
+                <td>{{props.item.name}}</td>
+                <td>
+                    <router-link :to="{name: 'projectInfo', params: { id: props.item.id}}">
+                        <button>
+                                More Info
+                        </button>
+                    </router-link>
+                  </td>
+            </template>
+        </v-data-table>
+    </v-content>
 </template>
 
 <script>
@@ -13,6 +30,10 @@
 		data() {
 			return {
 				projects: [],
+				headers: [
+                    { text: 'Project Name', value: 'name' },
+                    { text: 'More Info', value: ''}
+				],
 				error: false
 			}
 		},
