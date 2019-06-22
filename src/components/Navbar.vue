@@ -12,7 +12,7 @@
                 </template>
             </v-list>
         </v-navigation-drawer>
-        <v-toolbar app dark>
+        <v-toolbar app>
             <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-spacer class="hidden-md-and-up"></v-spacer>
             <router-link :to="{path: '/'}">

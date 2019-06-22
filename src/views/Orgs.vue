@@ -1,11 +1,11 @@
 <template>
-    <v-content>
+    <v-content class="ma-3">
         <h1 class="text-xs-center"> Organizations </h1>
         <!-- ADD FILTER HERE FOR THE TABLE LATER -->
         <v-data-table
             :headers="headers"
             :items="orgs"
-            class="elevation-1"
+            class="elevation-1 mt-5"
         >
             <template v-slot:items="props">
                 <td>{{props.item.name}}</td>
