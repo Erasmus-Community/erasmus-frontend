@@ -13,14 +13,14 @@ export default new Router({
       name: 'home',
       component: Home
     },
+    {
+      path: '/orgs/create',
+      name: 'createOrg',
+      component: () => import(/* webpackChunkName: "orgInfo" */ './views/CreateOrg.vue')
+    },
     { path: '/orgs/:id',
       name: 'orgInfo',
       component: () => import(/* webpackChunkName: "orgInfo" */ './components/OrgInfo.vue')
-    },
-    {
-      path: '/orgs/create',
-      name: 'createOrg'
-      // component
     },
     {
       path: '/orgs',
@@ -28,14 +28,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "orgs" */ './views/Orgs.vue')
     },
     {
+      path: '/projects/create',
+      name: 'createProj',
+      component: () => import(/* webpackChunkName: "orgInfo" */ './views/CreateProj.vue')
+    },
+    {
       path: '/projects/:id',
       name: 'projectInfo',
       component: () => import(/* webpackChunkName: "projectInfo" */ './components/ProjectInfo.vue')
-    },
-    {
-      path: '/projects/create',
-      name: 'createProj'
-      // component
     },
     {
       path: '/projects',
@@ -43,12 +43,12 @@ export default new Router({
       component: () => import(/* webpackChunkName: "projects" */ './views/Projects.vue')
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/team',
+      name: 'team',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/Team.vue')
     }
   ]
 })
