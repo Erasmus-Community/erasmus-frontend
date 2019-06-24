@@ -15,8 +15,8 @@
                 required
             ></v-text-field>
             <v-select
-                v-model="select"
-                :items="items"
+                v-model="country"
+                :items="countries"
                 :error-messages="selectErrors"
                 label="Country"
                 required
@@ -24,7 +24,7 @@
                 @blur="$v.select.$touch()"
             ></v-select>
             <v-select
-                v-model="select"
+                v-model="interests"
                 :items="items"
                 :error-messages="selectErrors"
                 label="Interests"
@@ -39,11 +39,18 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     data: () => ({
       valid: false,
       firstname: '',
       lastname: '',
+      country: null,
+      countries: [],
+      interests: null,
+      items: [], // to be changed
+
+      // Rules for input
       nameRules: [
         v => !!v || 'Name is required',
         v => v.length <= 10 || 'Name must be less than 10 characters'
@@ -53,7 +60,23 @@
         v => !!v || 'E-mail is required',
         v => /.+@.+/.test(v) || 'E-mail must be valid'
       ]
-    })
+    }),
+
+    created(){
+      axios.get('https://restcountries.eu/rest/v2/all').then( info => {
+        this.countries = info; 
+      });
+    },
+
+    methods:{
+      clear: function(event){
+        console.log(event);
+      },
+      
+      submit: function(event){
+        console.log(event);
+      }
+    }
   }
 </script>
 
