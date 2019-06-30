@@ -28,6 +28,12 @@
             <router-link :to="{path: '/'}">
                 <v-btn flat class="hidden-sm-and-down">The Team</v-btn>
             </router-link>
+            <router-link :to="{path: '/login'}">
+                <v-btn flat class="hidden-sm-and-down">Login</v-btn>
+            </router-link>
+            <router-link :to="{path: '/signup'}">
+                <v-btn flat class="hidden-sm-and-down">Sign Up</v-btn>
+            </router-link>
         </v-toolbar>
     </span>
 </template>
@@ -42,7 +48,9 @@
                     { value: 'Home' },
                     { value: 'Organisations' },
                     { value: 'Projects' },
-                    { value: 'The Team' }
+                    { value: 'The Team' },
+                    { value: 'Login'},
+                    { value: 'Sign Up'}
                 ]
             };
         }

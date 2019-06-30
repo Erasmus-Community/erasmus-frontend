@@ -50,8 +50,7 @@
       projectname: '',
       description: '',
       submitMessage: '',
-      host_org: '',
-      items: [], // to be changed
+      host_org: ''
     }),
 
     created(){
