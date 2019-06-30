@@ -14,6 +14,7 @@
               label="Description"
               @input="$v.description.$touch()"
               @blur="$v.description.$touch()"
+              required
             ></v-text-field>
             <v-text-field
                 v-model="email"
@@ -35,14 +36,17 @@
             ></v-select>
             <v-select
               v-model="erasmus"
-              :items="erasmus"
+              :items="items"
+              label="Erasmus"
               @change="$v.erasmus.$touch()"
               @blur="$v.erasmus.$touch()"
             ></v-select>
             <v-select
-                v-model="interests"
+                v-model="interest"
                 :items="items"
                 label="Interests"
+                @change="$v.interest.$touch()"
+                @blur="$v.interest.$touch()"
             ></v-select>
             <v-btn @click="submit">submit</v-btn>
             <v-btn @click="clear">clear</v-btn>
@@ -61,8 +65,10 @@
     validations : {
       orgname: { required },
       email: { required, email},
-      country: { required }
-
+      country: { required },
+      description: { required},
+      interest: {},
+      erasmus: {},
     },
 
     data: () => ({
@@ -72,8 +78,8 @@
       country: '',
       description: '',
       countries: [],
-      interests: null,
-      erasmus: null,
+      interest: '',
+      erasmus: '',
       items: [], // to be changed
     }),
 
@@ -108,18 +114,35 @@
     },
 
     methods:{
-      clear: function(event){
-        console.log(event);
+      clear () {
+        this.$v.$reset();
+        this.orgname = '';
+        this.email = '';
+        this.country = '';
+        this.description = '';
+        this.interest = '';
+        this.erasmus = '';
       },
       
     submit() {
-      console.log('submit!')
       this.$v.$touch()
       if (this.$v.$invalid) {
-        console.log('error')
       } else {
         // do your submit logic here
-        console.log('ok');
+        axios.post('http://127.0.0.1:8000/api/orgs/',
+          {
+            name: this.orgname,
+            description: this.description,
+            email: this.email,
+            erasmus: [],
+            interests: [],
+            country: this.country,
+          }
+        ).then( info => {
+          console.log(info);
+        }).catch( err => {
+          console.log(err);
+        });
       }
     }
     }
