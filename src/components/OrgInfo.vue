@@ -1,10 +1,13 @@
 <template>
-    <div>
-        <h1> Test </h1>
-        <div>{{org.name}}</div>
-        <div>{{org.country}}</div>
-        <div>{{org.erasmus}}</div>    
-    </div>
+    <v-content class="ma-4">
+        
+        <h1> Organisation Name </h1>
+        <p>{{org.name}}</p>
+    
+        <p>{{org.description}}</p>
+        <p>{{org.country}}</p>
+        <p>{{org.erasmus}}</p>    
+    </v-content>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <v-content class="ma-3">
+    <v-content class="ma-4">
         <v-form v-model="valid">
             <v-text-field
               v-model="orgname"
@@ -9,13 +9,13 @@
               @input="$v.orgname.$touch()"
               @blur="$v.orgname.$touch()"
             ></v-text-field>
-            <v-text-field
+            <v-textarea
               v-model="description"
               label="Description"
               @input="$v.description.$touch()"
               @blur="$v.description.$touch()"
               required
-            ></v-text-field>
+            ></v-textarea>
             <v-text-field
                 v-model="email"
                 :error-messages="emailErrors"
@@ -51,6 +51,7 @@
             <v-btn @click="submit">submit</v-btn>
             <v-btn @click="clear">clear</v-btn>
         </v-form>
+        <p class="mt-3 ml-2" v-if="submitMessage !== ''"> {{submitMessage}} </p>
     </v-content>
 </template>
 
@@ -58,6 +59,7 @@
   import axios from 'axios'
   import { validationMixin } from 'vuelidate'
   import { required, email } from 'vuelidate/lib/validators'
+import { setTimeout } from 'timers';
   
   export default {
     mixins: [validationMixin],
@@ -80,6 +82,7 @@
       countries: [],
       interest: '',
       erasmus: '',
+      submitMessage: '',
       items: [], // to be changed
     }),
 
@@ -139,9 +142,13 @@
             country: this.country,
           }
         ).then( info => {
-          console.log(info);
+          this.submitMessage = 'Organisation was created. Redirecting to the created organization page.'
+          setTimeout( () => this.$router.push(
+              { name: 'orgInfo', params:{ id: info.data.id }}),
+          5000);
+          
         }).catch( err => {
-          console.log(err);
+          this.submitMessage = err;
         });
       }
     }
@@ -150,5 +157,4 @@
 </script>
 
 <style lang="scss" scoped>
-
 </style>
