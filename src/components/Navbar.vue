@@ -22,9 +22,11 @@
             <router-link :to="{path: '/orgs'}">
                 <v-btn flat class="hidden-sm-and-down">Organisations</v-btn>
             </router-link>
+            <!--
             <router-link :to="{path: '/projects'}">
                 <v-btn flat class="hidden-sm-and-down">Projects</v-btn>
             </router-link>
+           -->
             <router-link :to="{path: '/'}">
                 <v-btn flat class="hidden-sm-and-down">The Team</v-btn>
             </router-link>

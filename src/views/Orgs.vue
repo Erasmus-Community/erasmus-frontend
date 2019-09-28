@@ -49,8 +49,9 @@
 
         methods: {
             fetchOrgs() {
-                axios.get('http://127.0.0.1:8000/api/orgs/').then(response => {
+                axios.get('/api/orgs').then(response => {
                     this.orgs = response.data;
+                    console.log(response);
                 }).catch(error => {
                     console.log(error)
                 })
