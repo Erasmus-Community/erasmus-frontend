@@ -2,33 +2,22 @@
     <v-content class="ma-3">
         <h1 class="text-xs-center"> Organizations </h1>
         <!-- ADD FILTER HERE FOR THE TABLE LATER -->
-        <v-data-table
-            :headers="headers"
-            :items="orgs"
-            class="elevation-1 mt-5"
-        >
-            <template v-slot:items="props">
-                <td>{{props.item.name}}</td>
-                <td>{{props.item.country}}</td>
-                <td>{{props.item.interests}}</td>
-                <td>
-                    <router-link :to="{name: 'orgInfo', params: { id: props.item.id}}">
-                        <button>
-                                More Info
-                        </button>
-                    </router-link>
-                  </td>
-            </template>
-
-        </v-data-table>
+        
+        <div v-for="org in orgs" v-bind:key="org.id">
+            <OrgInfo v-bind:org="org"/>
+        </div>
     </v-content>
 </template>
 
 <script>
     import axios from 'axios';
+    import OrgInfo from '../components/OrgInfo.vue';
 
     export default {
         name: 'orgs',
+        components: {
+            OrgInfo,
+        },
 
         data() {
             return {
@@ -36,8 +25,7 @@
                 headers: [
                     { text: 'Organization Name', value: 'name' },
                     { text: 'Country', value: 'country' },
-                    { text: 'Interests', value: 'interests' },
-                    { text: 'More Info', value: ''}
+                    { text: 'Description', value: 'description'}
                 ],
                 error: false             
             }
@@ -49,9 +37,9 @@
 
         methods: {
             fetchOrgs() {
-                axios.get('/api/orgs').then(response => {
+                axios.get('http://localhost:8000/api/orgs').then(response => {
                     this.orgs = response.data;
-                    console.log(response);
+                    console.log(this.orgs)
                 }).catch(error => {
                     console.log(error)
                 })

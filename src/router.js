@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Orgs from './views/Orgs.vue'
 
 Vue.use(Router)
 
@@ -12,10 +13,6 @@ export default new Router({
       path: '/orgs/create',
       name: 'createOrg',
       component: () => import(/* webpackChunkName: "orgInfo" */ './views/CreateOrg.vue')
-    },
-    { path: '/orgs/:id',
-      name: 'orgInfo',
-      component: () => import(/* webpackChunkName: "orgInfo" */ './components/OrgInfo.vue')
     },
     {
       path: '/orgs',
@@ -62,9 +59,9 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Login.vue')
     },
     {
-      path: '/',
-      name: 'home',
-      component: Home
+      path: '/orgs',
+      name: 'orgs',
+      component: Orgs
     }
   ]
 })
