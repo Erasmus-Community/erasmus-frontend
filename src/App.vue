@@ -7,16 +7,16 @@
 </template>
 
 <script>
-import MainNavigation from '@/components/Navbar';
-import MainFooter from '@/components/Footer';
+import MainNavigation from '@/components/Navbar'
+import MainFooter from '@/components/Footer'
 
 export default {
-    name: 'youthEramus',
-    components: {
-        MainNavigation,
-        MainFooter,
-    }
-};
+  name: 'youthEramus',
+  components: {
+    MainNavigation,
+    MainFooter
+  }
+}
 </script>
 
 <style>

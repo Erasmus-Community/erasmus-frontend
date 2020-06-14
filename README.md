@@ -32,9 +32,18 @@ npm run test
 ```
 
 ### Lints and fixes files
+
+**Using the Vue-cli**
+
 ```
 npm run lint
 ```
+
+**Other useful commands:**
+Having eslint installed globally:
+
+Checking for errors: eslint "src/**/*.{js,vue}" 
+Fix errors automatically: eslint "src/**/*.{js,vue}" --fix
 
 ## All the Contributors
 

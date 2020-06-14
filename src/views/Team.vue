@@ -8,13 +8,13 @@
         </v-flex>
       </v-layout>
     </v-container>
-  </v-content>  
+  </v-content>
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {
+
+}
 </script>
 
 <style lang="scss" scoped>

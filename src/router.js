@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 import Orgs from './views/Orgs.vue'
 
 Vue.use(Router)
@@ -9,6 +8,7 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    // Organisations
     {
       path: '/orgs/create',
       name: 'createOrg',
@@ -17,23 +17,15 @@ export default new Router({
     {
       path: '/orgs',
       name: 'orgs',
-      component: () => import(/* webpackChunkName: "orgs" */ './views/Orgs.vue')
+      component: Orgs
     },
-    //  {
-    //    path: '/projects/create',
-    //    name: 'createProj',
-    //    component: () => import(/* webpackChunkName: "orgInfo" */ './views/CreateProj.vue')
-    //  },
-    //  {
-    //    path: '/projects/:id',
-    //    name: 'projectInfo',
-    //    component: () => import(/* webpackChunkName: "projectInfo" */ './components/ProjectInfo.vue')
-    //  },
-    //  {
-    //    path: '/projects',
-    //    name: 'projects',
-    //    component: () => import(/* webpackChunkName: "projects" */ './views/Projects.vue')
-    //  },
+    {
+      path: 'orgs/:id',
+      name: 'orgInfo',
+      component: () => import('./views/OrgInfo.vue')
+    },
+
+    // Others
     {
       path: '/team',
       name: 'team',
@@ -57,11 +49,6 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/Login.vue')
-    },
-    {
-      path: '/orgs',
-      name: 'orgs',
-      component: Orgs
     }
   ]
 })

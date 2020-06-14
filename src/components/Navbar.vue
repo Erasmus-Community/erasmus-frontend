@@ -1,5 +1,5 @@
 <template>
-    <span> 
+    <span>
         <v-navigation-drawer app v-model="drawer">
             <v-list>
                 <template v-for="(menu, i) in menus">
@@ -22,14 +22,9 @@
             <router-link :to="{path: '/orgs'}">
                 <v-btn flat class="hidden-sm-and-down">Organisations</v-btn>
             </router-link>
-            <!--
-            <router-link :to="{path: '/projects'}">
-                <v-btn flat class="hidden-sm-and-down">Projects</v-btn>
-            </router-link>
-            <router-link :to="{path: '/'}">
+            <router-link :to="{path: '/team'}">
                 <v-btn flat class="hidden-sm-and-down">The Team</v-btn>
             </router-link>
-            -->
             <router-link :to="{path: '/login'}">
                 <v-btn flat class="hidden-sm-and-down">Login</v-btn>
             </router-link>
@@ -41,22 +36,22 @@
 </template>
 
 <script>
-    export default {
-        name: 'MainNavigation',
-        data() {
-            return {
-                drawer: false,
-                menus: [
-                 //   { value: 'Home' },
-                    { value: 'Organisations' },
-                 //   { value: 'Projects' },
-                    { value: 'The Team' },
-                    { value: 'Login'},
-                    { value: 'Sign Up'}
-                ]
-            };
-        }
+export default {
+  name: 'MainNavigation',
+  data () {
+    return {
+      drawer: false,
+      menus: [
+        //   { value: 'Home' },
+        { value: 'Organisations' },
+        //   { value: 'Projects' },
+        { value: 'The Team' },
+        { value: 'Login' },
+        { value: 'Sign Up' }
+      ]
     }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
