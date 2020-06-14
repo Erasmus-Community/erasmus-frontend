@@ -6,12 +6,12 @@
 </template>
 
 <script>
-    export default {
-        name: 'MainFooter',
-        data(){
-            return { }
-        }
-    }
+export default {
+  name: 'MainFooter',
+  data () {
+    return { }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
