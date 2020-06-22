@@ -20,7 +20,7 @@ export default new Router({
       component: Orgs
     },
     {
-      path: 'orgs/:id',
+      path: '/orgs/:id',
       name: 'orgInfo',
       component: () => import('./views/OrgInfo.vue')
     },
