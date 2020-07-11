@@ -6,7 +6,7 @@ import CreateOrg from './views/CreateOrg.vue'
 import OrgInfo from './views/OrgInfo.vue'
 import SignUp from './views/SignUp.vue'
 import Login from './views/Login.vue'
-
+import RecoverPassword from './views/RecoverPassword.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -36,6 +36,7 @@ export default new Router({
       name: 'team',
       component: Team
     },
+    // account
     {
       path: '/signup',
       name: 'signUp',
@@ -45,6 +46,11 @@ export default new Router({
       path: '/login',
       name: 'signIn',
       component: Login
+    },
+    {
+      path: '/recover',
+      name: 'recover',
+      component: RecoverPassword
     }
   ]
 })

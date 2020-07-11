@@ -1,15 +1,12 @@
 <template>
-    <v-content>
-        <form>
-            <input type="text" name="username" placeholder="Username" required/>
-            <input type="password" name="password" placeholder="*********" required/>
-            <input type="checkbox" v-model.lazy="toggle">
-            <label for="checkbox">Remember me?</label>
-            <button v-on:click="login">Login</button>
-        </form>
-        <p>Forgot password?</p>
-        <button v-on:click="signup">Create New Account</button>
-    </v-content>
+  <v-form v-model="valid" class="mx-auto">
+    <v-text-field v-model="name" label="Username" required></v-text-field>
+    <v-password-field v-model="password" label="Password" required></v-password-field>
+    <v-checkbox v-model="remember" label="Remember me?"></v-checkbox>
+    <v-btn color="success" class="mr-4" @click="login">Login</v-btn>
+    <v-btn color="info" class="mr-4" @click="signup">Create New Account</v-btn>
+    <a href="/recover" class="mr-4">Forgot password?</a>
+  </v-form>
 </template>
 
 <script>
