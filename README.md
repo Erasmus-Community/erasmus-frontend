@@ -1,5 +1,12 @@
 # Erasmus Community - Front End
 
+What the users see. Take a look on the backend if you want to run with the backend on.
+Tecnologies:
+
+- Vue framework
+- HTML / CSS
+- JS
+
 ## Communication
 We are using the trello to control the features being developed. If you are working in any feature to complement the application use it to help us coordinate . Thanks! :thumbsup:
 
@@ -38,12 +45,6 @@ npm run test
 ```
 npm run lint
 ```
-
-**Other useful commands:**
-Having eslint installed globally:
-
-Checking for errors: eslint "src/**/*.{js,vue}" 
-Fix errors automatically: eslint "src/**/*.{js,vue}" --fix
 
 ## All the Contributors
 
