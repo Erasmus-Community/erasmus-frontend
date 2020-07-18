@@ -1,12 +1,10 @@
 <template>
-    <v-content>
-        <form>
-            <input type="text" name="username" placeholder="Username"/>
-            <input type="password" name="password" placeholder="*********"/>
-        </form>
-        <button v-on:click="signup">Sign Up</button>
-        <p>Go back to <a href="/login">login </a>page</p>
-    </v-content>
+  <v-form v-model="valid" class="mx-auto">
+    <v-text-field v-model="name" label="Username" required></v-text-field>
+    <v-password-field v-model="password" label="Password" required></v-password-field>
+    <v-btn color="success" class="mr-4" @click="login">Sign Up</v-btn>
+    <a href="/login" class="mr-4">Go back to login page</a>
+  </v-form>
 </template>
 
 <script>
@@ -17,6 +15,7 @@ export default {
       this.$router.push('/login')
     },
     signup () {
+      event.preventDefault()
       console.log('signup')
     }
   }

@@ -1,23 +1,30 @@
 <template>
     <v-content class="ma-3">
         <h1 class="text-xs-center"> Organizations </h1>
-
-        <div v-for="org in orgs" v-bind:key="org.id">
-            <OrgInfo v-bind:org="org"/>
-        </div>
+        <v-container>
+          <v-row>
+            <div v-for="org in orgs" v-bind:key="org.id">
+              <v-col name="country" class="col-3">{{org.country}}</v-col>
+              <v-col name="org_name" class="col-6">{{org.name}}</v-col>
+              <v-col name="href" class="col-3">
+                <a :href="'/orgInfo/' + org.id">See More</a>
+              </v-col>
+              </div>
+          </v-row>
+          <div >
+          </div>
+        </v-container>
     </v-content>
 </template>
 
 <script>
 import axios from 'axios'
-import OrgInfo from '../components/OrgInfo.vue'
 
 export default {
   name: 'orgs',
   components: {
-    OrgInfo
-  },
 
+  },
   data: function () {
     return {
       orgs: [
@@ -134,8 +141,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .container-orgs{
-        display: grid;
-        grid-template-columns: auto 10% 20%;
-    }
 </style>

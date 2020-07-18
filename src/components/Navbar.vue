@@ -1,4 +1,4 @@
-<template>
+<template class="mb-4">
     <span>
         <v-navigation-drawer app v-model="drawer">
             <v-list>
