@@ -5,9 +5,9 @@ We are using the trello to control the features being developed. If you are work
 
 [Trello](https://trello.com/erasmuscommunity/home)
 
-For communications at real time we use the discord. Feel free to join us at anytime.
+We use discord for the communication. Join us to be part of this awesome project.
 
-[Discord](https://discord.gg/VFS7WE)
+[Discord](https://discord.gg/eMTfRzh)
 
 ## Requirements
 
@@ -39,6 +39,7 @@ npm run test
 npm run lint
 ```
 
+<<<<<<< Updated upstream
 **Other useful commands:**
 Having eslint installed globally:
 
@@ -48,3 +49,6 @@ Fix errors automatically: eslint "src/**/*.{js,vue}" --fix
 ## All the Contributors
 
 To be added
+=======
+## All the Contributors a huge thank you :heart:
+>>>>>>> Stashed changes
