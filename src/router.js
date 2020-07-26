@@ -16,7 +16,7 @@ export default new Router({
     // Organisations
     {
       path: '/orgs/create',
-      name: 'createOrg',
+      name: 'create_org',
       component: CreateOrg
     },
     {
@@ -25,9 +25,10 @@ export default new Router({
       component: Orgs
     },
     {
-      path: '/orgs/:id',
-      name: 'orgInfo',
-      component: OrgInfo
+      path: '/orgs/:orgId',
+      name: 'organisationInformation',
+      component: OrgInfo,
+      props: true
     },
 
     // Others
