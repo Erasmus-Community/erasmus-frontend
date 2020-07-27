@@ -19,7 +19,14 @@ export default {
   },
   methods: {
     login () {
-      console.log('login')
+      event.preventDefault()
+      axios.post('http://localhost:3000/auth/login', data={ email: '', password: '' }).then( response => {
+        console.log(response);
+
+        // TODO: store token in vuex.
+      }).catch( error => {
+        console.log(error);
+      })
     },
     signup () {
       this.$router.push('/signup')

@@ -40,12 +40,12 @@ export default new Router({
     // account
     {
       path: '/signup',
-      name: 'signUp',
+      name: 'signup',
       component: SignUp
     },
     {
       path: '/login',
-      name: 'signIn',
+      name: 'login',
       component: Login
     },
     {
