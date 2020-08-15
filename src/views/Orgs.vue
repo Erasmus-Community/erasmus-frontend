@@ -136,7 +136,7 @@ export default {
   },
 
   created: function () {
-    // this.fetchOrgs();
+    this.fetchOrgs()
   },
 
   methods: {
@@ -149,7 +149,6 @@ export default {
 
       axios.get(url).then(response => {
         this.orgs = response.data
-        console.log(this.orgs)
       }).catch(error => {
         console.log(error)
       })

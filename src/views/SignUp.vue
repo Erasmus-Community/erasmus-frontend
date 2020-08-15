@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'signup',
   data () {
@@ -22,9 +23,14 @@ export default {
     login () {
       this.$router.push('/login')
     },
+    
     signup () {
       event.preventDefault()
-      console.log('signup')
+      axios.post('http://localhost:3000/auth/create', data={ email: '', password: '' }).then( response => {
+        console.log(response);
+      }).catch( error => {
+        console.log(error);
+      })
     }
   }
 }
