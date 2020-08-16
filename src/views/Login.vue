@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'login',
   data () {
@@ -20,12 +21,12 @@ export default {
   methods: {
     login () {
       event.preventDefault()
-      axios.post('http://localhost:3000/auth/login', data={ email: '', password: '' }).then( response => {
-        console.log(response);
+      axios.post('http://localhost:3000/auth/login', { email: '', password: '' }).then(response => {
+        console.log(response)
 
         // TODO: store token in vuex.
-      }).catch( error => {
-        console.log(error);
+      }).catch(error => {
+        console.log(error)
       })
     },
     signup () {
