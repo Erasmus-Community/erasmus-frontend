@@ -15,13 +15,13 @@ export default {
     login () {
       this.$router.push('/login')
     },
-    
+
     signup () {
       event.preventDefault()
-      axios.post('http://localhost:3000/auth/create', data={ email: '', password: '' }).then( response => {
-        console.log(response);
-      }).catch( error => {
-        console.log(error);
+      axios.post('http://localhost:3000/auth/create', { email: '', password: '' }).then(response => {
+        console.log(response)
+      }).catch(error => {
+        console.log(error)
       })
     }
   }

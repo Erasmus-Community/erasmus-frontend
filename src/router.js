@@ -7,6 +7,8 @@ import OrgInfo from './views/OrgInfo.vue'
 import SignUp from './views/SignUp.vue'
 import Login from './views/Login.vue'
 import RecoverPassword from './views/RecoverPassword.vue'
+import Home from './views/Home.vue'
+import PageNotFound from './views/PageNotFound.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -52,6 +54,15 @@ export default new Router({
       path: '/recover',
       name: 'recover',
       component: RecoverPassword
+    },
+    {
+      path: '/',
+      name: '',
+      component: Home
+    },
+    {
+      path: '*',
+      component: PageNotFound
     }
   ]
 })
