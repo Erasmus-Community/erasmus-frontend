@@ -5,7 +5,10 @@
                 The Page you were looking for does not exist.
             </v-col>
         </v-row>
-        <v-img contain :src="require('@/assets/img/404.png')"></v-img>
+        <v-img contain
+            max-height="500px"
+            :src="require('@/assets/img/404.png')">
+        </v-img>
     </v-container>
 </template>
 
