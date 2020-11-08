@@ -132,7 +132,7 @@ export default {
       if (this.$v.$invalid) {
       } else {
         // do your submit logic here
-        axios.post('http://127.0.0.1:8000/api/orgs/',
+        axios.post('http://127.0.0.1:8000/api/organisations/',
           {
             name: this.orgname,
             description: this.description,

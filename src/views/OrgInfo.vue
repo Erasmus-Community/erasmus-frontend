@@ -1,7 +1,7 @@
 <template>
     <v-main>
         <div class="container">
-            <v-btn class="info" :href="'/orgs'">Back to the List</v-btn>
+            <v-btn class="info" :href="'/organisations'">Back to the List</v-btn>
             <div class="container">{{ organisation.description }} </div>
             <div class="contaier">{{organisation.name}} </div>
         </div>

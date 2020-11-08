@@ -16,17 +16,17 @@ export default new Router({
   routes: [
     // Organisations
     {
-      path: '/orgs/create',
+      path: '/organisations/create',
       name: 'create_org',
       component: CreateOrg
     },
     {
-      path: '/orgs',
+      path: '/organisations',
       name: 'orgs',
       component: Orgs
     },
     {
-      path: '/orgs/:orgId',
+      path: '/organisations/:orgId',
       name: 'organisationInformation',
       component: OrgInfo,
       props: true
