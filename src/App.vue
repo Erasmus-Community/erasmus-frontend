@@ -1,27 +1,24 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-    </v-app-bar>
-
-    <v-main>
-      <v-container>
+    <v-app>
+      <v-app-bar app>
+      </v-app-bar>
+      <v-container id="main-content">
         <router-view/>
       </v-container>
-    </v-main>
-  </v-app>
+    </v-app>
 </template>
 
 <script>
-
 export default {
   name: 'App',
-
   data: () => ({
     //
   })
 }
 </script>
+
+<style lang="scss" scoped>
+  #main-content {
+    margin-top: 65px;
+  }
+</style>

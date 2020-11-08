@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Orgs from './views/Orgs.vue'
-import Team from './views/Team.vue'
 import CreateOrg from './views/CreateOrg.vue'
 import OrgInfo from './views/OrgInfo.vue'
 import SignUp from './views/SignUp.vue'
@@ -31,13 +30,6 @@ export default new Router({
       name: 'organisationInformation',
       component: OrgInfo,
       props: true
-    },
-
-    // Others
-    {
-      path: '/team',
-      name: 'team',
-      component: Team
     },
     // account
     {
