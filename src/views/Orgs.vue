@@ -1,7 +1,6 @@
 <template class="ma-3">
     <v-main class="ma-3">
         <h1 class="text-center">Organizations</h1>
-        <!-- This is a search bar. TODO:
         <v-container>
           <v-row>
             <v-col class="d-flex col-6">
@@ -12,7 +11,6 @@
             </v-col>
           </v-row>
         </v-container>
-        -->
         <v-container>
           <v-row v-for="org in orgs" v-bind:key="org.id">
               <v-col name="country" class="col-3">{{org.country}}</v-col>
@@ -49,12 +47,8 @@ export default {
   },
 
   methods: {
-    fetchOrgs (options = null) {
+    fetchOrgs () {
       let url = 'http://localhost:8000/api/organisations'
-
-      if (options) {
-        debugger
-      }
 
       axios.get(url).then(response => {
         this.orgs = response.data

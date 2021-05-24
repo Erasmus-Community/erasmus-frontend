@@ -6,7 +6,6 @@ import OrgInfo from './views/OrgInfo.vue'
 import SignUp from './views/SignUp.vue'
 import Login from './views/Login.vue'
 import RecoverPassword from './views/RecoverPassword.vue'
-import Home from './views/Home.vue'
 import PageNotFound from './views/PageNotFound.vue'
 Vue.use(Router)
 
@@ -19,11 +18,6 @@ export default new Router({
       path: '/organisations/create',
       name: 'create_org',
       component: CreateOrg
-    },
-    {
-      path: '/organisations',
-      name: 'orgs',
-      component: Orgs
     },
     {
       path: '/organisations/:orgId',
@@ -50,7 +44,7 @@ export default new Router({
     {
       path: '/',
       name: '',
-      component: Home
+      component: Orgs
     },
     {
       path: '*',

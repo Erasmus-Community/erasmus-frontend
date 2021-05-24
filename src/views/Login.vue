@@ -21,7 +21,7 @@
         dense
         type="error"
       >
-      <p v-for="error in errors" :key="error">{{error}}</p>
+      <p v-for="error of errors" :key="error">{{error}}</p>
       </v-alert>
     </v-container>
   </v-main>
@@ -59,11 +59,11 @@ export default {
           // save token
           const accessToken = info['access_token']
           localStorage.setItem('login_token', accessToken)
-          this.$router.push('/organisations')
+          this.$router.push('/')
         }
       }).catch(error => {
         this.errorExists = true
-        this.errors = error.response.data.message.join('.')
+        this.errors = error.response.data.message
       })
     },
     signup () {
