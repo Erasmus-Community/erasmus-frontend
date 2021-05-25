@@ -1,19 +1,11 @@
 <template>
     <v-app>
       <v-app-bar app>
-        <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> TODO: asking the value on the -->
-        <v-btn icon>
-          <v-icon @click="home">mdi-home</v-icon>
+        <v-btn  v-if="!isLogged" icon @click="login">
+          Login
         </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn icon>
-        <v-icon @click="orgs">mdi-charity</v-icon>
-        </v-btn>
-        <v-btn icon @click="login">
-          <v-icon>mdi-login</v-icon>
-        </v-btn>
-        <v-btn icon>
-          <v-icon>mdi-logout</v-icon>
+        <v-btn v-if="isLogged" icon>
+          Logout
         </v-btn>
       </v-app-bar>
       <v-container id="main-content">
@@ -44,6 +36,11 @@ export default {
       if (this.$route.name !== 'orgs') {
         this.$router.push('/organisations').catch(() => {})
       }
+    },
+
+    isLogged () {
+      let loggedIn = localStorage.getItem('login_token')
+      return loggedIn !== undefined && loggedIn !== null && loggedIn !== ''
     }
   }
 }
