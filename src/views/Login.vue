@@ -51,13 +51,13 @@ export default {
       this.errorExists = false
       axios.post('http://localhost:3000/auth/login', { email: this.email, password: this.password }).then(response => {
         debugger
-        let info = response.data
+        const info = response.data
         if (info.status === 401) {
           this.errorExists = true
           this.errors = info.response.error
         } else {
           // save token
-          const accessToken = info['access_token']
+          const accessToken = info.access_token
           localStorage.setItem('login_token', accessToken)
           this.$router.push('/')
         }

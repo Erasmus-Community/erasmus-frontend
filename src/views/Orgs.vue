@@ -48,7 +48,7 @@ export default {
 
   methods: {
     fetchOrgs () {
-      let url = 'http://localhost:8000/api/organisations'
+      const url = 'http://localhost:8000/api/organisations'
 
       axios.get(url).then(response => {
         this.orgs = response.data

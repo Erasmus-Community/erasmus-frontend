@@ -41,11 +41,13 @@ export default {
     }
   },
   methods: {
-    signup () {
+    signup (event) {
       event.preventDefault()
       this.errorExists = false
-      axios.post('http://localhost:3000/auth/create', { email: this.email, password: this.password }).then(response => {
-
+      axios.post('http://localhost:3000/auth/create',
+        { email: this.email, password: this.password }
+      ).then(response => {
+        console.log(response)
       }).catch(error => {
         this.errorExists = true
         this.error = error.response.data.message.join('. ')

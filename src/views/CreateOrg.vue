@@ -130,6 +130,7 @@ export default {
     submit () {
       this.$v.$touch()
       if (this.$v.$invalid) {
+        debugger
       } else {
         // do your submit logic here
         axios.post('http://127.0.0.1:8000/api/organisations/',
